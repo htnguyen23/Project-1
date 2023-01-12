@@ -1,0 +1,151 @@
+functions.c: In function ‘Verify_Email’:
+functions.c:179:2: error: parameter ‘at_pointer’ is initialized
+  179 |  char *at_pointer = 0; // initialized to undefined -> on the CSL machine, pointers can't start at 0?
+      |  ^~~~
+functions.c:181:2: error: parameter ‘strLen’ is initialized
+  181 |  int strLen = stringLen(email);
+      |  ^~~
+functions.c:181:25: error: ‘email’ undeclared (first use in this function)
+  181 |  int strLen = stringLen(email);
+      |                         ^~~~~
+functions.c:181:25: note: each undeclared identifier is reported only once for each function it appears in
+functions.c:182:2: error: expected declaration specifiers before ‘end_pointer’
+  182 |  end_pointer = &email[strLen];
+      |  ^~~~~~~~~~~
+functions.c:183:2: error: parameter ‘nameLen’ is initialized
+  183 |  int nameLen = 0;
+      |  ^~~
+functions.c:185:2: error: expected declaration specifiers before ‘for’
+  185 |  for (int i = 0; i < strLen; i++) {
+      |  ^~~
+functions.c:185:18: error: expected declaration specifiers before ‘i’
+  185 |  for (int i = 0; i < strLen; i++) {
+      |                  ^
+functions.c:185:30: error: expected declaration specifiers before ‘i’
+  185 |  for (int i = 0; i < strLen; i++) {
+      |                              ^
+functions.c:197:2: error: expected declaration specifiers before ‘if’
+  197 |  if (!isLetter(email[0])) {
+      |  ^~
+functions.c:202:6: error: expected declaration specifiers before ‘if’
+  202 |      if (nameLen > MAX_EMAIL_LEN) {
+      |      ^~
+functions.c:208:2: error: expected declaration specifiers before ‘cp_pointer’
+  208 |  cp_pointer = at_pointer;  // copy at_pointer so we can interate backwards through email
+      |  ^~~~~~~~~~
+functions.c:211:2: error: expected declaration specifiers before ‘printf’
+  211 |  printf("Checking each char for if it's a letter or digit\n");
+      |  ^~~~~~
+functions.c:212:2: error: expected declaration specifiers before ‘for’
+  212 |  for (int i = 0; i < nameLen; i++) {
+      |  ^~~
+functions.c:212:18: error: expected declaration specifiers before ‘i’
+  212 |  for (int i = 0; i < nameLen; i++) {
+      |                  ^
+functions.c:212:31: error: expected declaration specifiers before ‘i’
+  212 |  for (int i = 0; i < nameLen; i++) {
+      |                               ^
+functions.c:222:2: error: expected declaration specifiers before ‘if’
+  222 |  if (at_pointer == 0) {
+      |  ^~
+functions.c:227:2: error: expected declaration specifiers before ‘cp_pointer’
+  227 |  cp_pointer = end_pointer;
+      |  ^~~~~~~~~~
+functions.c:228:2: error: expected declaration specifiers before ‘for’
+  228 |  for (int i = 0; i < 5; i++) {
+      |  ^~~
+functions.c:228:18: error: expected declaration specifiers before ‘i’
+  228 |  for (int i = 0; i < 5; i++) {
+      |                  ^
+functions.c:228:25: error: expected declaration specifiers before ‘i’
+  228 |  for (int i = 0; i < 5; i++) {
+      |                         ^
+functions.c:231:2: error: expected declaration specifiers before ‘if’
+  231 |  if (*cp_pointer == '@') { // can I use "cp_pointer == at_pointer"?
+      |  ^~
+functions.c:236:2: error: parameter ‘domainLen’ is initialized
+  236 |  int domainLen = 0;
+      |  ^~~
+functions.c:237:2: error: expected declaration specifiers before ‘while’
+  237 |  while (*cp_pointer != '@') {
+      |  ^~~~~
+functions.c:241:2: error: expected declaration specifiers before ‘if’
+  241 |  if (domainLen > MAX_DOMAIN_LEN) {
+      |  ^~
+functions.c:246:2: error: expected declaration specifiers before ‘cp_pointer’
+  246 |  cp_pointer = at_pointer;
+      |  ^~~~~~~~~~
+functions.c:247:2: error: expected declaration specifiers before ‘*’ token
+  247 |  *cp_pointer++;
+      |  ^
+functions.c:249:2: error: parameter ‘subDomFlag’ is initialized
+  249 |  int subDomFlag = 1;
+      |  ^~~
+functions.c:250:2: error: expected declaration specifiers before ‘for’
+  250 |  for (int i = 0; i < domainLen; i++) {
+      |  ^~~
+functions.c:250:18: error: expected declaration specifiers before ‘i’
+  250 |  for (int i = 0; i < domainLen; i++) {
+      |                  ^
+functions.c:250:33: error: expected declaration specifiers before ‘i’
+  250 |  for (int i = 0; i < domainLen; i++) {
+      |                                 ^
+functions.c:271:2: error: parameter ‘top1’ is initialized
+  271 |  char top1[] = ".edu";
+      |  ^~~~
+functions.c:272:2: error: parameter ‘top2’ is initialized
+  272 |  char top2[] = ".com";
+      |  ^~~~
+functions.c:273:2: error: parameter ‘top3’ is initialized
+  273 |  char top3[] = ".net";
+      |  ^~~~
+functions.c:275:2: error: parameter ‘matchFlag’ is initialized
+  275 |  int matchFlag = 0;
+      |  ^~~
+functions.c:277:2: error: expected declaration specifiers before ‘cp_pointer’
+  277 |  cp_pointer = end_pointer;
+      |  ^~~~~~~~~~
+functions.c:278:2: error: expected declaration specifiers before ‘for’
+  278 |  for (int i = 4; i >= 0; i--){
+      |  ^~~
+functions.c:278:18: error: expected declaration specifiers before ‘i’
+  278 |  for (int i = 4; i >= 0; i--){
+      |                  ^
+functions.c:278:26: error: expected declaration specifiers before ‘i’
+  278 |  for (int i = 4; i >= 0; i--){
+      |                          ^
+functions.c:282:2: error: expected declaration specifiers before ‘if’
+  282 |  if (compare(userTopDom, top1))
+      |  ^~
+functions.c:284:2: error: expected declaration specifiers before ‘if’
+  284 |  if (compare(userTopDom, top2))
+      |  ^~
+functions.c:286:2: error: expected declaration specifiers before ‘if’
+  286 |  if (compare(userTopDom, top3))
+      |  ^~
+functions.c:288:2: error: expected declaration specifiers before ‘if’
+  288 |  if (!matchFlag) {
+      |  ^~
+functions.c:293:6: error: expected declaration specifiers before ‘printf’
+  293 |      printf(SUCCESS_2_EMAIL);
+      |      ^~~~~~
+functions.c:294:6: error: expected declaration specifiers before ‘return’
+  294 |      return 1;
+      |      ^~~~~~
+functions.c:295:1: error: expected declaration specifiers before ‘}’ token
+  295 | }
+      | ^
+functions.c:311:45: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  311 | int Verify_Password(char pwd[], size_t len) {
+      |                                             ^
+functions.c:332:80: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  332 | int Verify_Passwords_Match(char pwd1[], size_t len1, char pwd2[], size_t len2) {
+      |                                                                                ^
+functions.c:353:69: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  353 | void Get_User_Data(char *message, char *data, const int MAX_LENGTH) {
+      |                                                                     ^
+functions.c:175:5: error: old-style parameter declarations in prototyped function definition
+  175 | int Verify_Email(char email[], size_t len)
+      |     ^~~~~~~~~~~~
+functions.c:374: error: expected ‘{’ at end of input
+functions.c:374: warning: control reaches end of non-void function [-Wreturn-type]
